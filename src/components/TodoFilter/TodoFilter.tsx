@@ -1,3 +1,5 @@
+import React from 'react';
+
 type Props = {
   status: 'all' | 'active' | 'completed';
   setStatus: (value: 'all' | 'active' | 'completed') => void;

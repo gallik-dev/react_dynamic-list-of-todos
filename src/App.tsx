@@ -87,7 +87,7 @@ export const App: React.FC = () => {
 
             <div className="block">
               {loader && <Loader />}
-              {!loader && todos.length > 0 && (
+              {!loader && (
                 <TodoList
                   todos={visibleTodos}
                   onSelect={handleSelectedTodo}
@@ -103,7 +103,10 @@ export const App: React.FC = () => {
           user={user}
           todo={selectedTodo}
           loading={modalLoader}
-          onClose={() => setSelectedTodo(null)}
+          onClose={() => {
+            setSelectedTodo(null);
+            setModalLoader(false);
+          }}
         />
       )}
     </>
